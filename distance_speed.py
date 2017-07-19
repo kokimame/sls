@@ -5,11 +5,13 @@ a = np.array((0,0,0))
 b = np.array((1,1,0))
 
 start = time.time()
+
 for x in range(0, 100):
     for y in range(0, 100):
         for z in range(0, 100):
             v1 = np.array((x, y, z))
             v2 = np.array((z, y, x))
+            np.linalg.norm(v1-v2)
 print("Time numpy: ", time.time() - start)
 
 start = time.time()
