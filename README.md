@@ -10,4 +10,6 @@ In the demo below, the users at the desks (shown in purple rectangles) have thei
 
 You see the color of the circle on each desk, which represents the actual lx on the desk, converges to the color of the desk, which represents the demanding lx of the user. Thus the optimization has been successfully completed.
 
+**To reproduce the demo, run sls_demo.py.**
+
 <img src="sls_demo.gif" width="480">
