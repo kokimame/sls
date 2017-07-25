@@ -8,6 +8,7 @@ viewer = rendering.Viewer(ROOMW + 2 * OFFX, ROOMH + 2 * OFFY)
 lights_p = [(0, 0, 0), (1800, 0, 1), (3600, 0, 2), (5400, 0, 3),
           (0, 1800, 4), (1800, 1800, 5), (3600, 1800, 6), (5400, 1800, 7),
           (0, 3600, 8), (1800, 3600, 9), (3600, 3600, 10), (5400, 3600, 11)]
+# Initial value of candela for each light
 init_cd = 0
 
 desks_p = [ 
@@ -71,6 +72,7 @@ class Desk:
             dcd = -self.err/ 10 * (len(n_light) - i) 
             light.update_cd(dcd)
 
+    # Not used
     def adjust_lights(self, lights):
         for light in lights:
             dcd = -self.err/100 * self.distance_to(light)
@@ -112,10 +114,26 @@ def episode(N):
             desk.set_center_color(dlight)
             viewer.render()
 
-episode(50)
-[desk.set_tlx(500) for desk in desks]
-episode(100)
 
-[ print("Light ID", light._id, ":", light.cd) for light in lights ]
-print([desk.err for desk in desks])
+"""
+def main():
+    import time
 
+    start = time.time()
+    episode(50)
+    print("1: ", time.time() - start)
+    [ print("Light ID", light._id, ":", light.cd) for light in lights ]
+    print([desk.err for desk in desks])
+
+    [desk.set_tlx(500) for desk in desks]
+
+    start = time.time()
+    episode(50)
+    print("2: ", time.time() - start)
+
+    [ print("Light ID", light._id, ":", light.cd) for light in lights ]
+    print([desk.err for desk in desks])
+
+if __name__ == "__main__":
+    main()
+"""
