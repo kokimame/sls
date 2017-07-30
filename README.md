@@ -1,3 +1,5 @@
+(homework project)
+
 # Smart Lighting Simulation
 
 This simulation's goal is to make lighting provide a desirable light to each user.
